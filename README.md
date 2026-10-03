@@ -117,7 +117,8 @@ Ham veri dosyaları GitHub deposuna dahil edilmemiştir. Veri seti Kaggle üzeri
 ## 6. Projenin Çalıştırılması
 
 1. Depoyu bilgisayarınıza indirin.
-2. `requirements.txt` dosyasındaki Python kütüphanelerini yükleyin.
+2. Projenin ana dizininde bir terminal açarak gerekli Python kütüphanelerini yükleyin.
+    pip install -r requirements.txt
 3. Give Me Some Credit veri setini Kaggle üzerinden indirin.
 4. `cs-training.csv` dosyasını `data/raw/` klasörüne yerleştirin.
 5. `notebooks/Credit_Risk_Management.ipynb` dosyasını Jupyter Notebook üzerinden açarak hücreleri sırasıyla çalıştırın.
