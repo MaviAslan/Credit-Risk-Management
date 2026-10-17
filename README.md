@@ -10,6 +10,8 @@ Bu projede, müşterilerin önümüzdeki iki yıl içerisinde 90 gün ve üzeri 
 
 Proje, kredi riski modelleme sürecini veri hazırlığından yeni müşteri tahminine kadar Jupyter Notebook üzerinde ele almaktadır.
 
+Çalışmanın temel amacı, en yüksek tahmin performansına ulaşmaktan ziyade, uçtan uca bir makine öğrenmesi projesinde kullanılan yöntemleri, modelleme kararlarını ve değerlendirme süreçlerini uygulamalı olarak ortaya koyan bir referans çalışma oluşturmaktır.
+
 ## 2. Veri Seti
 
 Çalışmada Kaggle tarafından yayımlanan [Give Me Some Credit](https://www.kaggle.com/c/GiveMeSomeCredit) veri seti kullanılmıştır.
@@ -55,6 +57,8 @@ Model karşılaştırmaları, 5-Fold Stratified Cross-Validation ve hiperparamet
 Temel değerlendirme metrikleri ROC-AUC, Gini ve Average Precision olarak belirlenmiş; Recall, Precision ve F1-Score tamamlayıcı metrikler olarak incelenmiştir.
 
 LightGBM daha yüksek çapraz doğrulama performansı göstermesine rağmen Logistic Regression, modelin yorumlanabilirliği dikkate alınarak seçilmiştir.
+
+Hiperparametre arama alanları, hesaplama maliyetleri ve çalışmanın uygulamalı öğrenme amacı dikkate alınarak sınırlandırılmıştır. Bu kapsamda öncelik, tüm olası parametre kombinasyonlarını taramaktan ziyade, çapraz doğrulama ve hiperparametre optimizasyonu süreçlerinin doğru biçimde uygulanmasına verilmiştir.
 
 ### 3.4. Karar Eşiği Analizi
 
@@ -117,11 +121,14 @@ Ham veri dosyaları GitHub deposuna dahil edilmemiştir. Veri seti Kaggle üzeri
 ## 6. Projenin Çalıştırılması
 
 1. Depoyu bilgisayarınıza indirin.
-2. Projenin ana dizininde bir terminal açarak gerekli Python kütüphanelerini yükleyin.
-    pip install -r requirements.txt
-3. Give Me Some Credit veri setini Kaggle üzerinden indirin.
-4. `cs-training.csv` dosyasını `data/raw/` klasörüne yerleştirin.
-5. `notebooks/Credit_Risk_Management.ipynb` dosyasını Jupyter Notebook üzerinden açarak hücreleri sırasıyla çalıştırın.
+2. Projenin ana dizininde bir terminal açarak gerekli Python kütüphanelerini yükleyin:
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Give Me Some Credit veri setini Kaggle üzerinden indirin.
+5. `cs-training.csv` dosyasını `data/raw/` klasörüne yerleştirin.
+6. `notebooks/Credit_Risk_Management.ipynb` dosyasını Jupyter Notebook üzerinden açarak hücreleri sırasıyla çalıştırın.
 
 ## 7. Sınırlılıklar ve Geliştirme Alanları
 
