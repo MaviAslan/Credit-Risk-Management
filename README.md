@@ -91,7 +91,7 @@ Modelin ürettiği skor, kalibre edilmiş temerrüt olasılığı olarak değerl
 
 ## 4. Kullanılan Teknolojiler
 
-- Python
+- Python 3.13.5 
 - pandas ve NumPy
 - Matplotlib ve Seaborn
 - Scikit-learn
