@@ -41,7 +41,9 @@ Veri incelemesi sonucunda belirlenen ön işleme kararları doğrultusunda eksik
 
 Özellik seçiminde Information Value (IV), korelasyon analizi ve Variance Inflation Factor (VIF) sonuçlarından yararlanılmıştır.
 
-Ön işleme adımları, çapraz doğrulama sırasında veri sızıntısını önlemek amacıyla Scikit-learn Pipeline yapısına dahil edilmiştir.
+Eksik değer ikamesi ve özellik dönüşümleri, çapraz doğrulama sırasında ilgili eğitim foldları üzerinde öğrenilip doğrulama foldlarına uygulanacak şekilde Scikit-learn Pipeline yapısına dahil edilmiştir.
+
+Ayrıca özel CreditPreprocessor sınıfının temel dönüşümleri, sentetik test verileri üzerinde gerçekleştirilen beş kontrol grubu ile doğrulanmıştır.
 
 ### 3.3. Modelleme ve Karşılaştırma
 
@@ -59,6 +61,8 @@ Temel değerlendirme metrikleri ROC-AUC, Gini ve Average Precision olarak belirl
 LightGBM daha yüksek çapraz doğrulama performansı göstermesine rağmen Logistic Regression, modelin yorumlanabilirliği dikkate alınarak seçilmiştir.
 
 Hiperparametre arama alanları, hesaplama maliyetleri ve çalışmanın uygulamalı öğrenme amacı dikkate alınarak sınırlandırılmıştır. Bu kapsamda öncelik, tüm olası parametre kombinasyonlarını taramaktan ziyade, çapraz doğrulama ve hiperparametre optimizasyonu süreçlerinin doğru biçimde uygulanmasına verilmiştir.
+
+Recall, Precision ve F1-Score değerleri modellerin 0.50 karar eşiğinde hesaplanmıştır. Modeller arasında kullanılan sınıf ağırlıklandırma yaklaşımları farklılaştığından bu metrikler doğrudan eşit operasyonel koşullardaki performans karşılaştırması olarak değerlendirilmemiştir.
 
 ### 3.4. Karar Eşiği Analizi
 
@@ -126,9 +130,9 @@ Ham veri dosyaları GitHub deposuna dahil edilmemiştir. Veri seti Kaggle üzeri
    ```bash
    pip install -r requirements.txt
    ```
-4. Give Me Some Credit veri setini Kaggle üzerinden indirin.
-5. `cs-training.csv` dosyasını `data/raw/` klasörüne yerleştirin.
-6. `notebooks/Credit_Risk_Management.ipynb` dosyasını Jupyter Notebook üzerinden açarak hücreleri sırasıyla çalıştırın.
+3. Give Me Some Credit veri setini Kaggle üzerinden indirin.
+4. `cs-training.csv` dosyasını `data/raw/` klasörüne yerleştirin.
+5. `notebooks/Credit_Risk_Management.ipynb` dosyasını Jupyter Notebook üzerinden açarak hücreleri sırasıyla çalıştırın.
 
 ## 7. Sınırlılıklar ve Geliştirme Alanları
 
